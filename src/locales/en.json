@@ -1,0 +1,310 @@
+{
+  "lang": {
+    "french": "French",
+    "english": "English"
+  },
+  "nav": {
+    "accueil": "Home",
+    "experiences": "Experience",
+    "projets": "Projects",
+    "competences": "Skills",
+    "formation": "Education",
+    "contact": "Contact",
+    "downloadCv": "Download CV",
+    "home": "Home"
+  },
+  "hero": {
+    "hello": "Hello, I'm",
+    "subtitle": "PRODUCT MANAGEMENT | PROJECT MANAGEMENT | UX RESEARCH | STRATEGY & INNOVATION",
+    "bio": "Specialist in digital transformation and innovative product development, with expertise in payment systems and electronic payments.",
+    "yearsExp": "years of experience",
+    "keyProjects": "key projects",
+    "cta": "Discover my projects"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "Me",
+    "yearsExp": "years of experience",
+    "projectsLed": "projects led",
+    "paragraph1": "Passionate Product Manager with over {{count}} years of experience in digital product management and digital transformation.",
+    "paragraph2": "Specialized in developing electronic payment solutions, e-commerce platform optimization, and digital strategy.",
+    "paragraph3": "Payment systems expert, I have led strategic projects for major institutions, creating innovative solutions that transform user experience and deliver measurable results.",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "age": "Age",
+      "ageValue": "28 years old"
+    }
+  },
+  "experiences": {
+    "title": "Professional",
+    "titleHighlight": "Experience",
+    "list": [
+      {
+        "titre": "Product Owner",
+        "entreprise": "NGSER (Nouvelle Génération de Services)",
+        "periode": "April 2024 – Present",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQEF3B9QdqlSjQ/company-logo_100_100/company-logo_100_100/0/1630592764477/ngser_logo?e=1773878400&v=beta&t=vIX9qMlJ62ig5-ekP5G-H2Via-VRZRM2g2HoYtmhHDQ",
+        "description": [
+          "End-to-end management of digital product development (mobile & web)",
+          "Defining strategies to launch/improve payment products",
+          "Designing and optimizing secure electronic payment solutions (PCI DSS)",
+          "Overseeing payment gateway integrations with banks and fintechs"
+        ],
+        "technologies": ["Payment Gateway", "PCI DSS", "Mobile Money", "Visa/Mastercard"]
+      },
+      {
+        "titre": "Product Owner",
+        "entreprise": "Orange Côte d'Ivoire",
+        "periode": "May 2023 – March 2024",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQEqTJx77-6MKg/company-logo_100_100/company-logo_100_100/0/1725527338997?e=1773878400&v=beta&t=KTEVIeqQYbwyRphuaQ59MpyebWQCJdblnoCTO37rtPU",
+        "description": [
+          "Backlog management (Telco, Marketplace, Orange Money)",
+          "Prioritizing product evolutions based on business stakes",
+          "Gathering and analyzing B2B/B2C customer needs",
+          "User journey and UX optimization"
+        ],
+        "technologies": ["Product Management", "UX/UI", "Agile/Scrum", "B2B/B2C"]
+      },
+      {
+        "titre": "Acquisition & Engagement",
+        "entreprise": "Orange Côte d'Ivoire",
+        "periode": "March 2023 – May 2023",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQEqTJx77-6MKg/company-logo_100_100/company-logo_100_100/0/1725527338997?e=1773878400&v=beta&t=KTEVIeqQYbwyRphuaQ59MpyebWQCJdblnoCTO37rtPU",
+        "description": [
+          "Ad campaign tracking and analysis (online store, Orange & Moi app)",
+          "Planning and running studies on B2B and B2C offerings"
+        ],
+        "technologies": ["Google Ads", "Analytics", "Digital Marketing"]
+      },
+      {
+        "titre": "Junior Digital Manager",
+        "entreprise": "The Adress Abidjan",
+        "periode": "Nov. 2021 – Jan. 2022",
+        "logo": "/logos/the-adress.png",
+        "logoFallback": "TAA",
+        "description": [
+          "E-commerce site management (content, product pages, stock, orders)",
+          "SEO and SEA campaign optimization",
+          "Design and follow-up of email campaigns"
+        ],
+        "technologies": ["e-Commerce", "SEO", "SEA", "Email Marketing"]
+      },
+      {
+        "titre": "Junior Digital Manager",
+        "entreprise": "YM Africa",
+        "periode": "Feb. 2021 – June 2021",
+        "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFLBHlUMF-Aqw/company-logo_200_200/B4EZaWgWfOGYAI-/0/1746281785749/youth_talent_africa_logo?e=1773878400&v=beta&t=IGSlv-xiutRLF3JvUFy-cXTWE17J1PYvKT8J2AZ8Njs",
+        "description": [
+          "Content strategy for Social Media Ads",
+          "Content SEO optimization",
+          "Community management and e-reputation"
+        ],
+        "technologies": ["Social Media", "SEO", "Community Management"]
+      },
+      {
+        "titre": "Marketing Research Officer",
+        "entreprise": "MedZ subsidiary of CDG",
+        "periode": "Feb. 2018 – March 2018",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGUHeflu-JQXQ/company-logo_200_200/company-logo_200_200/0/1630617343260/medz_logo?e=1773878400&v=beta&t=Sey2-m5EF5Cwe36YyZO1E3PWeoCG7x-KvDmNW0Koa8Y",
+        "description": [
+          "Investment opportunity studies through identification and outreach to national and international players to develop economic activity zones that create value and meet market needs.",
+          "Conducting marketing studies on industrial sectors in Côte d'Ivoire, Guinea Conakry, Gabon and Mali in support of regional commercial strategies."
+        ],
+        "technologies": ["Marketing research", "CRM", "Commercial strategy"]
+      },
+      {
+        "titre": "Marketing Assistant",
+        "entreprise": "MedZ subsidiary of CDG",
+        "periode": "July 2017 – Aug. 2017",
+        "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGUHeflu-JQXQ/company-logo_200_200/company-logo_200_200/0/1630617343260/medz_logo?e=1773878400&v=beta&t=Sey2-m5EF5Cwe36YyZO1E3PWeoCG7x-KvDmNW0Koa8Y",
+        "description": [
+          "Customer outreach and follow-up via CRM software to strengthen commercial performance, improve customer service and support marketing actions."
+        ],
+        "technologies": ["CRM", "Customer service", "Marketing"]
+      }
+    ]
+  },
+  "projets": {
+    "title": "Key",
+    "titleHighlight": "Projects",
+    "subtitle": "Discover the strategic projects I have led.",
+    "viewProject": "View project",
+    "items": [
+      {
+        "nom": "CNAM",
+        "description": "Social contribution payments",
+        "details": [
+          "Mobile Money and Visa/Mastercard integration",
+          "Secure payment solution for contributions",
+          "Simplified interface for policyholders"
+        ],
+        "technologies": ["Mobile Money", "Visa", "Mastercard", "Gateway"]
+      },
+      {
+        "nom": "ONECI",
+        "description": "Online stamp fee payment system",
+        "details": [
+          "Government payment platform",
+          "PCI DSS compliance",
+          "Full transaction traceability"
+        ],
+        "technologies": ["PCI DSS", "Online payment", "API REST"]
+      },
+      {
+        "nom": "Mucrefci Connect",
+        "description": "Digitization of credit applications and payments",
+        "details": [
+          "Platform for civil servants",
+          "Online credit applications",
+          "Digital payment and tracking"
+        ],
+        "technologies": ["FinTech", "Credit", "Digital Banking"]
+      },
+      {
+        "nom": "Monpasseport.ci",
+        "description": "E-commerce application for passports",
+        "details": [
+          "Application dematerialization",
+          "Secure online payment",
+          "Real-time tracking"
+        ],
+        "technologies": ["e-Commerce", "Payment", "Mobile App"]
+      },
+      {
+        "nom": "Bridge Securities",
+        "description": "Transactional mobile/web application",
+        "details": [
+          "Financial product purchases",
+          "Dividend collection",
+          "Bridge Bank platform"
+        ],
+        "technologies": ["Finance", "Mobile Banking", "Web App"]
+      },
+      {
+        "nom": "MaxIt Côte d'Ivoire",
+        "description": "Orange CI application",
+        "details": [
+          "Telco, Marketplace, Orange Money",
+          "UX/UI optimization",
+          "Backlog management"
+        ],
+        "technologies": ["Product Management", "UX", "Agile"]
+      },
+      {
+        "nom": "Kaki Academy",
+        "description": "EdTech app – Career orientation module (+3,000 learners in Africa)",
+        "details": [
+          "Design and deployment of a strategic career orientation module with 250+ job profiles aligned with learning paths",
+          "Product vision, backlog prioritization and development coordination",
+          "Increased learner engagement and clearer pathways to concrete career outcomes"
+        ],
+        "technologies": ["EdTech", "Product Ownership", "Backlog", "Pedagogy"]
+      }
+    ]
+  },
+  "competences": {
+    "title": "Skills",
+    "titleHighlight": "& Expertise",
+    "languages": "Languages",
+    "certifications": "Certifications",
+    "french": "French",
+    "english": "English",
+    "frenchLevel": "C2 - Native",
+    "englishLevel": "B1 - Intermediate",
+    "cert1Title": "Google Digital Workshops",
+    "cert1Sub": "Digital Marketing",
+    "cert2Title": "Google My Business",
+    "cert2Sub": "Local SEO",
+    "categories": {
+      "productManagement": "Product Management",
+      "marketingDigital": "Digital Marketing",
+      "ecommerce": "e-Commerce",
+      "monetique": "Payment Systems",
+      "outils": "Tools",
+      "softSkills": "Soft Skills"
+    },
+    "skills": {
+      "productManagement": ["Agile/Scrum", "User Stories & Specs", "Roadmap & Backlog", "Go-to-Market", "UX Research"],
+      "marketingDigital": ["SEO/SEA", "Google Analytics", "Meta Business Suite", "Email Marketing", "Social Media Ads"],
+      "ecommerce": ["E-commerce strategy", "Funnel Optimization", "Conversion Rate", "Payment Integration", "Customer Journey"],
+      "monetique": ["Gateway Integration", "PCI DSS Compliance", "API REST", "Mobile Money", "Payment Security"],
+      "outils": ["Jira", "Trello", "HubSpot CRM", "Figma", "Postman"],
+      "softSkills": ["Leadership", "Communication", "Teamwork", "Problem solving", "Autonomy"]
+    }
+  },
+  "formation": {
+    "pathway": "Pathway",
+    "title": "Education",
+    "titleHighlight": "and Interests",
+    "interestsTitle": "Personal ",
+    "interestsTitleHighlight": "Interests",
+    "interestsSubtitle": "Beyond digital, passions that fuel my creativity and balance.",
+    "items": [
+      {
+        "diplome": "Master's in Digital Marketing and Digital Strategy",
+        "ecole": "ESTEM",
+        "periode": "2019 – 2021",
+        "lieu": "Casablanca, Morocco",
+        "specialite": "Digital Marketing & Strategy"
+      },
+      {
+        "diplome": "Bachelor's in Management Science",
+        "ecole": "ESTEM",
+        "periode": "2016 – 2019",
+        "lieu": "Casablanca, Morocco",
+        "specialite": "Management"
+      },
+      {
+        "diplome": "A-Levels (A2)",
+        "ecole": "Collège Prospère Mérimée",
+        "periode": "2015 – 2016",
+        "lieu": "Côte d'Ivoire"
+      }
+    ],
+    "interests": ["Podcast", "Basketball", "Reading", "Theatre"]
+  },
+  "contact": {
+    "title": "Let's Work",
+    "titleHighlight": "Together",
+    "subtitle": "Have a project in mind? Let's discuss how I can help you bring it to life.",
+    "infoTitle": "Contact",
+    "infoTitleHighlight": "Information",
+    "availability": "Availability",
+    "availabilityText": "Currently open to new professional opportunities and freelance collaborations.",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "location": "Location"
+    },
+    "locationValue": "Abidjan, Côte d'Ivoire",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject of your message",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send message"
+    }
+  },
+  "footer": {
+    "tagline": "Product Manager & e-Commerce Expert. Payment systems and digital strategy specialist.",
+    "openTo": "Open to opportunities and freelance collaborations.",
+    "navigation": "Navigation",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved.",
+    "backToTop": "Back to top"
+  },
+  "whatsapp": {
+    "aria": "Contact on WhatsApp",
+    "tooltip": "Chat on WhatsApp",
+    "message": "Hello David-Alexandre,\n\nI'm reaching out after visiting your portfolio. I would be glad to discuss an opportunity or collaboration with you.\n\nBest regards."
+  },
+  "splash": {
+    "subtitle": "PRODUCT MANAGEMENT | PROJECT MANAGEMENT | UX RESEARCH | STRATEGY & INNOVATION"
+  }
+}

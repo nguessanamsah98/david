@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <rect width="48" height="48" rx="10" fill="#292524"/>
+  <!-- Lettre D stylisée -->
+  <path d="M14 12h8c6.6 0 12 5.4 12 12s-5.4 12-12 12h-8V12z" fill="white" fill-opacity="0.95"/>
+  <path d="M22 12c5.5 0 10 4.5 10 10s-4.5 10-10 10V12z" fill="#f97316"/>
+</svg>

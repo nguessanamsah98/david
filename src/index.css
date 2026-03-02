@@ -1,0 +1,895 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Motif de fond chic - points subtils */
+.bg-pattern-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgba(249, 115, 22, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+@media (max-width: 767px) {
+  .bg-pattern-dots {
+    background-size: 48px 48px;
+  }
+}
+
+.bg-pattern-grid {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+@media (max-width: 767px) {
+  .bg-pattern-grid {
+    background-size: 64px 64px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Effet machine à écrire */
+@keyframes typewriter {
+  from {
+    width: 0;
+    overflow: hidden;
+    border-right: 3px solid rgb(249, 115, 22);
+  }
+  to {
+    width: 100%;
+    overflow: hidden;
+    border-right: 3px solid rgb(249, 115, 22);
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animate-blink-cursor {
+  animation: blink 0.8s step-end infinite;
+}
+
+.typewriter-line {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 2s steps(30) forwards, blink 0.6s step-end infinite;
+  border-right: 3px solid rgb(249, 115, 22);
+}
+
+.typewriter-line.hidden {
+  width: 0;
+}
+
+/* Animation d'entrée fluide */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Focus visible pour accessibilité */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgb(249, 115, 22);
+  outline-offset: 2px;
+}
+
+/* ========== Splash Screen ========== */
+.splash-screen {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.splash-title {
+  font-size: clamp(2rem, 8vw, 4rem);
+  letter-spacing: 0.35em;
+}
+
+.splash-letter {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Cercles orbitaux */
+.splash-orb {
+  position: absolute;
+  border: 1px solid rgba(249, 115, 22, 0.12);
+  border-radius: 50%;
+  animation: splash-orb-rotate 20s linear infinite;
+}
+
+.splash-orb-1 {
+  width: 80vmin;
+  height: 80vmin;
+  animation-duration: 25s;
+  animation-direction: reverse;
+}
+
+.splash-orb-2 {
+  width: 55vmin;
+  height: 55vmin;
+  animation-delay: -5s;
+  border-color: rgba(249, 115, 22, 0.08);
+}
+
+.splash-orb-3 {
+  width: 35vmin;
+  height: 35vmin;
+  animation-duration: 15s;
+  animation-direction: reverse;
+  animation-delay: -2s;
+  border-color: rgba(249, 115, 22, 0.15);
+}
+
+@keyframes splash-orb-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ligne d'accent */
+.splash-line {
+  position: absolute;
+  bottom: 28%;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(249, 115, 22, 0.9),
+    rgba(249, 115, 22, 0.5),
+    transparent
+  );
+  animation: splash-line-draw 1.8s ease-out 0.9s forwards;
+  transform: translateX(-50%);
+}
+
+@keyframes splash-line-draw {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    width: min(280px, 70vw);
+    opacity: 1;
+  }
+}
+
+/* Barre de progression */
+.splash-progress {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  width: min(200px, 50vw);
+  height: 2px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+.splash-progress::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgb(249, 115, 22), rgba(249, 115, 22, 0.6));
+  border-radius: 2px;
+  animation: splash-progress-fill 2.6s ease-out forwards;
+}
+
+@keyframes splash-progress-fill {
+  to {
+    width: 100%;
+  }
+}
+
+/* Sortie du splash */
+.splash-exit {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-exit .splash-title,
+.splash-exit .splash-orb,
+.splash-exit .splash-line {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}
+
+/* ========== Fond blanc ========== */
+.bg-mesh-static,
+.bg-animated-mesh {
+  background: #ffffff;
+}
+
+/* ========== Motifs chic animés ========== */
+@keyframes pattern-float-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+@keyframes pattern-float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes pattern-scale-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+@keyframes pattern-grid-slide {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(2px, -1px); }
+  66% { transform: translate(-1px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.bg-pattern-dots-animated {
+  background-image: radial-gradient(circle at 1px 1px, rgba(249, 115, 22, 0.12) 1.5px, transparent 0);
+  background-size: 48px 48px;
+}
+
+.bg-pattern-grid-animated {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Motifs fond sombre (section Parcours Professionnel) */
+.bg-pattern-dots-dark {
+  background-image: radial-gradient(circle at 1px 1px, rgba(249, 115, 22, 0.06) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+.bg-pattern-grid-dark {
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+@media (max-width: 767px) {
+  .bg-pattern-dots-dark {
+    background-size: 56px 56px;
+  }
+  .bg-pattern-grid-dark {
+    background-size: 64px 64px;
+  }
+}
+
+/* Motifs ronds sur les cartes noires (Parcours Professionnel) */
+.bg-pattern-dots-card {
+  background-color: rgba(28, 25, 23, 0.95);
+  background-image: radial-gradient(circle at 1px 1px, rgba(249, 115, 22, 0.09) 1.5px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Formes flottantes décoratives */
+.shape-float-1 { animation: pattern-float-x 8s ease-in-out infinite, pattern-float-y 6s ease-in-out infinite 1s; }
+.shape-float-2 { animation: pattern-float-x 10s ease-in-out infinite 2s, pattern-float-y 7s ease-in-out infinite; }
+.shape-float-3 { animation: pattern-float-x 9s ease-in-out infinite 0.5s, pattern-float-y 8s ease-in-out infinite 2s; }
+.shape-pulse { animation: pattern-scale-pulse 4s ease-in-out infinite; }
+
+/* Icônes bougeantes en continu */
+@keyframes icon-float-subtle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(1deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-2px) rotate(-1deg); }
+}
+@keyframes icon-glow-pulse {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 0 rgba(249, 115, 22, 0.3)); }
+  50% { opacity: 0.95; filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.2)); }
+}
+.animate-icon-move {
+  animation: icon-float-subtle 3s ease-in-out infinite;
+}
+.animate-icon-glow {
+  animation: icon-glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* Lettre typewriter : apparition chic */
+@keyframes letter-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.typewriter-letter {
+  display: inline-block;
+  animation: letter-pop-in 0.25s ease-out both;
+}
+
+/* Soulignement animé au survol (nav) */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: rgb(249, 115, 22);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link-underline:hover::after,
+.nav-link-underline.active-underline::after {
+  width: 100%;
+}
+
+/* Animations au scroll (AOS-style) – durées plus longues pour plus de vie */
+.aos-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-fade-up.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.aos-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-fade-in.aos-animate {
+  opacity: 1;
+}
+.aos-slide-left {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-slide-left.aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+.aos-delay-1 { transition-delay: 0.12s; }
+.aos-delay-2 { transition-delay: 0.24s; }
+.aos-delay-3 { transition-delay: 0.36s; }
+.aos-delay-4 { transition-delay: 0.48s; }
+.aos-delay-5 { transition-delay: 0.6s; }
+.aos-delay-6 { transition-delay: 0.72s; }
+.aos-delay-7 { transition-delay: 0.84s; }
+
+/* Nouveaux variants AOS */
+.aos-scale-up {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-scale-up.aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+.aos-zoom-in {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-zoom-in.aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+.aos-slide-right {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-slide-right.aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+.aos-rotate-in {
+  opacity: 0;
+  transform: rotate(-8deg) scale(0.95);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-rotate-in.aos-animate {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+.aos-flip {
+  opacity: 0;
+  transform: perspective(400px) rotateY(-18deg);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-flip.aos-animate {
+  opacity: 1;
+  transform: perspective(400px) rotateY(0);
+}
+.aos-fade-down {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aos-fade-down.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations au survol (hover) */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.14);
+}
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.35);
+}
+.btn-pulse {
+  animation: btn-pulse 2s ease-in-out infinite;
+}
+@keyframes btn-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.45); }
+  50% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+}
+.hover-glow:hover {
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.35);
+}
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse doux continu pour CTA / boutons flottants */
+@keyframes soft-pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.15); opacity: 0; }
+}
+.animate-soft-pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid currentColor;
+  animation: soft-pulse-ring 2s ease-in-out infinite;
+  pointer-events: none;
+}
+.whatsapp-pulse-ring.animate-soft-pulse-ring::before {
+  border-color: rgba(34, 197, 94, 0.55);
+}
+.animate-gentle-pulse {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+.animate-shake-on-hover:hover {
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+.animate-icon-bounce:hover {
+  animation: icon-bounce 0.6s ease;
+}
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+/* Entrée photo Hero */
+@keyframes hero-photo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-hero-photo {
+  animation: hero-photo-in 0.9s ease-out 0.3s both;
+}
+/* Ligne de temps - point qui pulse */
+.timeline-dot {
+  animation: timeline-dot-pulse 2s ease-in-out infinite;
+}
+@keyframes timeline-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(249, 115, 22, 0); }
+}
+
+/* ========== Parcours professionnel – design animé ========== */
+.timeline-title-underline {
+  animation: timeline-underline-in 0.8s ease-out 0.3s both;
+}
+@keyframes timeline-underline-in {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Ligne de temps qui se remplit quand la section est visible */
+#experiences.in-view .timeline-line-progress {
+  animation: timeline-line-fill 1.2s ease-out forwards;
+}
+@keyframes timeline-line-fill {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* ========== Parcours Professionnel – thème sombre, bordures fluides, hover ========== */
+.experience-card-parcours {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.experience-card-parcours:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.12);
+}
+
+.experience-card-accent-parcours {
+  width: 4px;
+}
+.experience-card-parcours:hover .experience-card-accent-parcours {
+  width: 5px;
+  opacity: 1;
+}
+
+.experience-card-parcours:hover .timeline-dot-expand {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.25);
+}
+
+.experience-icon-wrap-parcours {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.experience-card-parcours:hover .experience-icon-wrap-parcours {
+  background-color: rgba(249, 115, 22, 0.25);
+  transform: scale(1.06);
+}
+
+.experience-bullet-parcours {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.experience-card-parcours:hover .experience-bullet-parcours {
+  transform: translateX(3px);
+  color: rgb(114, 174, 230);
+}
+
+.experience-tag-parcours {
+  transition: transform 0.25s ease;
+}
+.experience-tag-parcours:hover {
+  transform: translateY(-2px);
+}
+
+/* Point timeline – pulse + expand au hover de la carte */
+.timeline-dot-expand {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.experience-card:hover .timeline-dot-expand {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+}
+.timeline-dot-inner {
+  transition: transform 0.3s ease;
+}
+.experience-card:hover .timeline-dot-inner {
+  transform: scale(1.4);
+}
+
+/* Carte expérience – lift + ombre + bordure */
+.experience-card {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.experience-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Barre d’accent gauche sur la carte */
+.experience-card-accent {
+  transition: width 0.35s ease, opacity 0.35s ease;
+  width: 4px;
+}
+.experience-card:hover .experience-card-accent {
+  width: 6px;
+  opacity: 1;
+}
+
+/* Icône briefcase – léger bounce au hover */
+.experience-icon-wrap {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.experience-card:hover .experience-icon-wrap {
+  background-color: rgba(249, 115, 22, 0.15);
+  transform: scale(1.08);
+}
+.experience-icon {
+  transition: transform 0.35s ease;
+}
+.experience-card:hover .experience-icon {
+  animation: icon-bounce 0.6s ease;
+}
+
+/* Bullets des descriptions – slide + couleur */
+.experience-bullet {
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.experience-card:hover .experience-bullet {
+  transform: translateX(2px);
+  color: rgb(249, 115, 22);
+}
+.experience-desc-item {
+  transition: opacity 0.3s ease;
+}
+.experience-card:hover .experience-desc-item {
+  opacity: 1;
+}
+
+/* Tags technologies – scale au hover */
+.experience-tag {
+  transform: translateZ(0);
+}
+.experience-tag:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Header: animation d'entrée avant affichage (après splash) */
+.header-entrance {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+}
+.header-entrance.header-entrance-done {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Navbar: animation défilante des liens */
+@keyframes navSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.nav-link-anim {
+  animation: navSlideIn 0.4s ease-out forwards;
+}
+.nav-link-anim:nth-child(1) { animation-delay: 0.05s; }
+.nav-link-anim:nth-child(2) { animation-delay: 0.1s; }
+.nav-link-anim:nth-child(3) { animation-delay: 0.15s; }
+.nav-link-anim:nth-child(4) { animation-delay: 0.2s; }
+.nav-link-anim:nth-child(5) { animation-delay: 0.25s; }
+.nav-link-anim:nth-child(6) { animation-delay: 0.3s; }
+
+/* Carousel scroll-snap */
+.carousel-scroll {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-scroll > * {
+  scroll-snap-align: start;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cartes projets : effet de brillance au survol */
+.projet-card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.projet-card-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+.projet-card-shine:hover::after {
+  left: 100%;
+}
+
+
+/* Cartes projets : surélévation + scale + ombre au survol */
+.projet-card-lift {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.projet-card-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.18);
+}
+
+/* Cartes formation / intérêts : lift + scale + léger glow au survol */
+.formation-card-hover {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.formation-card-hover:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(249, 115, 22, 0.08);
+}
+
+/* ========== Motifs géométriques animés (demi-ton) ========== */
+.motif-item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  will-change: transform;
+}
+@media (max-width: 767px) {
+  .motif-item {
+    opacity: 0.32;
+  }
+}
+.motif-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes motif-float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+  25% { transform: translate(-50%, -50%) translateY(-18px) translateX(12px); }
+  50% { transform: translate(-50%, -50%) translateY(-8px) translateX(-10px); }
+  75% { transform: translate(-50%, -50%) translateY(-22px) translateX(6px); }
+}
+
+@keyframes motif-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.45; }
+  50% { transform: translate(-50%, -50%) scale(1.12); opacity: 0.65; }
+}
+@keyframes motif-rotate-slow {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Animation appliquée en inline depuis le composant (durée/délai par motif) */
+
+/* ========== Bordures de cartes variées (style maquette) ========== */
+/* Coins vifs / nets – peu ou pas d'arrondi */
+.card-border-sharp {
+  border-radius: 2px;
+}
+
+/* Un coin très arrondi : inférieur droit */
+.card-border-round-br {
+  border-radius: 2px 2px 24px 2px;
+}
+
+/* Un coin très arrondi : supérieur droit */
+.card-border-round-tr {
+  border-radius: 2px 24px 2px 2px;
+}
+
+/* Un coin très arrondi : inférieur gauche */
+.card-border-round-bl {
+  border-radius: 2px 2px 2px 24px;
+}
+
+/* Fine bordure grise visible */
+.card-border-fine {
+  border-width: 1px;
+  border-color: rgb(231 229 228); /* stone-200 */
+}
+.card-border-fine.card-border-sharp,
+.card-border-fine.card-border-round-br,
+.card-border-fine.card-border-round-tr,
+.card-border-fine.card-border-round-bl {
+  /* garde le radius défini par l'autre classe */
+}
+
+/* Image des cartes : bordure quasi (un coin très arrondi sur la zone image) */
+.card-img-quasi-br {
+  border-radius: 0 0 20px 0;
+}
+.card-img-quasi-tr {
+  border-radius: 0 20px 0 0;
+}
+.card-img-quasi-bl {
+  border-radius: 0 0 0 20px;
+}
+.card-img-quasi-tl {
+  border-radius: 20px 0 0 0;
+}
+.card-img-quasi-sharp {
+  border-radius: 2px;
+}
+
+
